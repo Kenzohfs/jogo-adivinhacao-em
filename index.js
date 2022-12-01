@@ -27,6 +27,10 @@ app.get("/jogo", (req, res) => {
     res.sendFile(__dirname + "/public/html/home.html");
 })
 
+app.post('/criar_jogador', (req, res) => {
+    sql.query("insert into jogador (nome, pontos) values(?, ?)", [req.body.nome, 0])
+})
+
 // app.get("/", (req, res) => {
 //     res.sendFile(__dirname + "/public/pedido/dadosPessoais.html");
 // });
