@@ -7,6 +7,12 @@
     flex-direction: column;
 }
 
+.btn-voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
 .title {
     font-weight: 600;
     font-size: 2rem;

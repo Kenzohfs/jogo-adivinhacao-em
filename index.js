@@ -44,9 +44,18 @@ app.post('/criar_jogador', (req, res) => {
     })
 })
 
-// app.get("/", (req, res) => {
-//     res.sendFile(__dirname + "/public/pedido/dadosPessoais.html");
-// });
+app.get("/get_jogador_by_id/:id", (req, res) => {
+    sql.query("select * from jogador where id = ?", [req.params.id], (error, results, fields) => {
+        res.json(results[0]);
+    })
+})
+
+app.put("/salvar_pontuacao", (req, res) => {
+    console.log("req.body: ", req.body)
+    sql.query("update jogador set pontos = ? where id = ?", [req.body.pontos, req.body.id], (error, results, fields) => {
+        res.json(results);
+    });
+})
 
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);

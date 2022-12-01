@@ -5,6 +5,7 @@ document.body.addEventListener('keypress', (e) => {
 });
 
 let dificuldadeEscolhida, numeroSecreto, tentativas, pontuacao;
+const idJogador = localStorage.getItem("jogador");
 const inputChute = document.getElementById("input-numero");
 
 const setDificuldade = (dificuldade) => {
@@ -47,9 +48,32 @@ const chutar = () => {
 }
 
 const chuteCerto = () => {
-    pontuacao = 1000 / (dificuldadeEscolhida + (dificuldadeEscolhida - tentativas));
-    alert(pontuacao)
+    pontuacao = Math.floor(1000 / (dificuldadeEscolhida + (dificuldadeEscolhida - tentativas)));
+    const pts = pontuacao;
+    fetch(`/get_jogador_by_id/${idJogador}`, {
+        method: "GET",
+    }).then((res) => {
+        res.json().then((data) => {
+            let jogador = data;
+            fetch("/salvar_pontuacao", {
+                method: "PUT",
+                body: JSON.stringify({ ...jogador, pontos: (jogador.pontos + pts) }),
+                headers: { "Content-Type": "application/json" }
+            }).then(res => {
+                res.json().then((data) => {
+                    console.log(data);
+                    alert("Pontuação de " + jogador.nome + " foi: " + pts);
+                })
+            });
+        })
+    });
+
     numeroSecreto = null;
     dificuldadeEscolhida = null;
     inputChute.value = "";
+    pontuacao = 0;
+}
+
+const voltar = () => {
+    window.location.href = "/";
 }
