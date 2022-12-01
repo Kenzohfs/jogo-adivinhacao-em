@@ -27,8 +27,21 @@ app.get("/jogo", (req, res) => {
     res.sendFile(__dirname + "/public/html/jogo.html");
 })
 
+app.get("/ranking", (req, res) => {
+    res.sendFile(__dirname + "/public/html/ranking.html");
+})
+
+app.get("/get-ranking", (req, res) => {
+    sql.query("select * from jogador order by pontos desc", (error, results, fields) => {
+        res.json(results);
+    })
+})
+
 app.post('/criar_jogador', (req, res) => {
-    sql.query("insert into jogador (nome, pontos) values(?, ?)", [req.body.nome, 0])
+    sql.query("insert into jogador (nome, pontos) values(?, ?)", [req.body.nome, 0]);
+    sql.query("SELECT LAST_INSERT_ID();", (error, results, fields) => {
+        res.json(results[0]['LAST_INSERT_ID()']);
+    })
 })
 
 // app.get("/", (req, res) => {

@@ -8,6 +8,14 @@ function jogar() {
             headers: { "Content-Type": "application/json" }
         },
     )
-        .then(res => { });
-    window.location.href = "/jogo";
+        .then(res => {
+            res.json().then((data) => {
+                localStorage.setItem("jogador", data.toString());
+                window.location.href = "/jogo";
+            })
+        });
+}
+
+function verRanking() {
+    window.location.href = "/ranking";
 }

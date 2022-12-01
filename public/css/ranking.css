@@ -1,0 +1,29 @@
+body {
+    width: 98vw;
+    height: 97vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    background-color: white;
+    width: 60%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+    padding: 6px 12px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
