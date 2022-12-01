@@ -20,11 +20,11 @@ const sql = mysql.createConnection({
 sql.query('create table if not exists jogador (id int primary key auto_increment, nome varchar(100) not null, pontos int not null);');
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/public/home/home.html");
+    res.sendFile(__dirname + "/public/html/home.html");
 })
 
 app.get("/jogo", (req, res) => {
-    res.sendFile(__dirname + "/public/home/home.html");
+    res.sendFile(__dirname + "/public/html/home.html");
 })
 
 // app.get("/", (req, res) => {
