@@ -6,19 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Jogo da Adivinhação</title>
 </head>
 
 <body>
     <div class="divPrincipal">
-        <h1>Jogo da Adivinhação</h1>
-        <span>Adivinhe o número secreto entre 1 a 100, com tentativas baseadas no nível escolhido!</span>
+        <h1 class="font-primary">Jogo da Adivinhação</h1>
+        <span class="font-secondary">Adivinhe o número secreto entre 1 a 100, com tentativas baseadas no nível escolhido!</span>
         <div class="divInput">
-            <label for="nome">Nome:</label>
+            <label for="nome" class="font-secondary">Nome:</label>
             <input id="nome" name="nome">
         </div>
         <button onclick="jogar()">Jogar</button>
     </div>
+    <button class="ranking" onclick="verRanking()">Ver Ranking</button>
     <script src="../js/home.js"></script>
 </body>
 

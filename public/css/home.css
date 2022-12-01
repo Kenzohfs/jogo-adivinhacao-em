@@ -9,8 +9,6 @@ body {
 .divPrincipal {
     width: 30%;
     height: 50%;
-    border: 1px black solid;
-    border-radius: 6px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -31,4 +29,10 @@ input {
 button {
     cursor: pointer;
     padding: 6px 12px;
+}
+
+.ranking {
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
