@@ -17,8 +17,16 @@
 }
 
 .subtitle {
+    font-size: 1.3rem;
 }
 
 #container-btn-niveis {
 
+}
+
+.container-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
 }
