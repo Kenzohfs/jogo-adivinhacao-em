@@ -18,17 +18,42 @@
         <div id="container-niveis">
             <p class="subtitle font-secondary">Escolha a dificuldade</p>
             <div id="container-btn-niveis">
-                <div class="container-btn">    
-                    <button >Insano</button>
+                <div class="container-btn">
+                    <button onclick="setDificuldade(1)" class="btn-dificuldade">Insano</button>
                     <p class="font-tertiary">1 Tentativa</p>
-                    <!-- <button>Difícil</button>
-                    <button>Médio</button>
-                    <button>Fácil</button>
-                    <button>Noob</button> -->
+                </div>
+                <div class="container-btn">
+                    <button onclick="setDificuldade(2)" class="btn-dificuldade">Difícil</button>
+                    <p class="font-tertiary">2 Tentativas</p>
+                </div>
+                <div class="container-btn">
+                    <button onclick="setDificuldade(3)" class="btn-dificuldade">Médio</button>
+                    <p class="font-tertiary">3 Tentativas</p>
+                </div>
+                <div class="container-btn">
+                    <button onclick="setDificuldade(4)" class="btn-dificuldade">Fácil</button>
+                    <p class="font-tertiary">4 Tentativas</p>
+                </div>
+                <div class="container-btn">
+                    <button onclick="setDificuldade(5)" class="btn-dificuldade">Noob</button>
+                    <p class="font-tertiary">5 Tentativas</p>
                 </div>
             </div>
         </div>
+
+        <div id="container-input-jogo">
+            <label for="numero" class="font-secondary">
+                Chute um número
+            </label>
+            <div id="container-acoes">
+                <input type="number" id="input-numero">
+                <button onclick="chutar()" id="btn-chutar" class="btn-dificuldade">GO</button>
+            </div>
+
+            <p class="font-tertiary dica-enter">Pressione ENTER para chutar</p>
+        </div>
     </div>
+    <script src="../js/jogo.js"></script>
 </body>
 
 </html>
