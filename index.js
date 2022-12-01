@@ -23,6 +23,10 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/home/home.html");
 })
 
+app.get("/jogo", (req, res) => {
+    res.sendFile(__dirname + "/public/home/home.html");
+})
+
 // app.get("/", (req, res) => {
 //     res.sendFile(__dirname + "/public/pedido/dadosPessoais.html");
 // });
