@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 })
 
 app.get("/jogo", (req, res) => {
-    res.sendFile(__dirname + "/public/html/home.html");
+    res.sendFile(__dirname + "/public/html/jogo.html");
 })
 
 app.post('/criar_jogador', (req, res) => {
