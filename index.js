@@ -17,6 +17,12 @@ const sql = mysql.createConnection({
     database: 'jogo_adivinhacao'
 })
 
+sql.query('create table if not exists jogador (id int primary key auto_increment, nome varchar(100) not null, pontos int not null);');
+
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/public/home/home.html");
+})
+
 // app.get("/", (req, res) => {
 //     res.sendFile(__dirname + "/public/pedido/dadosPessoais.html");
 // });
